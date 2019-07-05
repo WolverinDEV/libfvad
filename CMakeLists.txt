@@ -10,20 +10,20 @@ option(BUILD_STATIC "Build static libraries" ON)
 file(GLOB_RECURSE SOURCE_FILES src/*.c)
 if (BUILD_SHARED)
     message("Building shared libraries")
-    add_library(libfvad_shared SHARED ${SOURCE_FILES})
-    set_target_properties(libfvad_shared PROPERTIES OUTPUT_NAME libfvad)
+    add_library(fvad_shared SHARED ${SOURCE_FILES})
+    set_target_properties(fvad_shared PROPERTIES OUTPUT_NAME fvad)
 
-    install(TARGETS libfvad_shared
+    install(TARGETS fvad_shared
             ARCHIVE DESTINATION lib
             LIBRARY DESTINATION lib
     )
 endif ()
 if (BUILD_STATIC)
     message("Building static libraries")
-    add_library(libfvad_static STATIC ${SOURCE_FILES})
-    set_target_properties(libfvad_static PROPERTIES OUTPUT_NAME libfvad)
+    add_library(fvad_static STATIC ${SOURCE_FILES})
+    set_target_properties(fvad_static PROPERTIES OUTPUT_NAME fvad)
 
-    install(TARGETS libfvad_static
+    install(TARGETS fvad_static
             ARCHIVE DESTINATION lib
             LIBRARY DESTINATION lib
     )
